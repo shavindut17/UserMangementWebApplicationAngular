@@ -9,18 +9,25 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class HomeComponent implements OnInit {
 
-  currentUser : User;
+ public  currentUser: any;
+ public  navigationPage: any;
 
-  constructor(private userService : UserService) {
+
+  constructor(private userService: UserService) {
     this.getUser();
   }
   ngOnInit() {
+    this.navigationPage = 'landing';
   }
 
-  getUser(){
+  getUser() {
     this.userService.getCurrentUser().subscribe( res => {
       this.currentUser = res as User ;
     });
+  }
+
+  navigation(selection) {
+      this.navigationPage = selection ;
   }
 
 }

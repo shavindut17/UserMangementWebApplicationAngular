@@ -5,9 +5,10 @@ import { ManagementRoutingModule } from './management-routing.module';
 import { HomeComponent } from './home/home.component';
 import { LandingComponent } from './landing/landing.component';
 import { CreateItemComponent } from './create-item/create-item.component';
+import { AllItemsComponent } from './all-items/all-items.component';
 
 @NgModule({
-  declarations: [HomeComponent, LandingComponent, CreateItemComponent],
+  declarations: [HomeComponent, LandingComponent, CreateItemComponent, AllItemsComponent],
   imports: [
     CommonModule,
     ManagementRoutingModule
