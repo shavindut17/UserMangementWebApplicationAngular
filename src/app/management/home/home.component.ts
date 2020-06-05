@@ -11,6 +11,9 @@ export class HomeComponent implements OnInit {
 
  public  currentUser: any;
  public  navigationPage: any;
+ public  headerText: any;
+ public  headerDescription: any;
+
 
 
   constructor(private userService: UserService) {
@@ -18,6 +21,8 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit() {
     this.navigationPage = 'landing';
+    this.headerText = 'Faster Bakers';
+    this.headerDescription = 'Faster bakers admin panel';
   }
 
   getUser() {
@@ -28,6 +33,13 @@ export class HomeComponent implements OnInit {
 
   navigation(selection) {
       this.navigationPage = selection ;
+      if (selection === 'create') {
+          this.headerText = 'Item Creation';
+          this.headerDescription =  'Please Create Items to show on the web site ';
+      } else if (selection === 'all') {
+        this.headerText = 'Created Items';
+        this.headerDescription =  'Items currently showing';
+      }
   }
 
 }
